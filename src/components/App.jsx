@@ -13,7 +13,7 @@ export function App() {
     const getContacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(getContacts);
 
-    if (parsedContacts.length !== 0) {
+    if (parsedContacts !== 0) {
       setContacts(parsedContacts);
     }
   }, []);
@@ -35,7 +35,6 @@ export function App() {
       return alert(`${name} is already in contacts!`);
     }
 
-    //  setContacts(({ contacts }) => ({ contacts: [contact, ...contacts] }));
     setContacts([contact, ...contacts]);
   };
 
